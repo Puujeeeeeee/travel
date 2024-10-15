@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 const Service = () => {
   return (
-    <div className="w-[100vw] h-full flex flex-col gap-[35px] items-center justify-center  mb-10 mt-10">
+    <div className="w-[100vw] h-full flex flex-col gap-[35px] items-center justify-center mb-10  mt-10">
       <div className="text-center px-[300px]">
         <h1 className=" text-3xl font-bold mb-10 text-shadow-xl">
           Монгол орны <span className="text-green-500">үзэсгэлэнт </span>{" "}
