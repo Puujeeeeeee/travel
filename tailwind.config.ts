@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+      },
       colors: {
         green: {
           50: "#30AF5B",

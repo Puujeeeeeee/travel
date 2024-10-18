@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/Button";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("/");
@@ -11,101 +9,42 @@ const Navbar = () => {
     setActiveLink(href);
   };
 
+  const navLinks = [
+    { href: "/", label: "Нүүр" },
+    { href: "/service", label: "Монголын гайхамшигууд" },
+    { href: "/product", label: "Аялалын брэндүүд" },
+    { href: "/amralt", label: "Амралтын газрууд" },
+    { href: "/travelTools", label: "Аялаллын багаж хэрэгсэлүүд" },
+  ];
+
   return (
     <nav className="flexBetween max-container padding-container bg-gray-200 z-30 py-5 items-center sticky top-0">
       <Link href="/">
         <div className="flex text-2xl font-bold items-center justify-center hover:cursor-pointer">
-          <p className="text-green-500">Wel</p>
-          <p className="text-black">come</p>
+          <span className="text-green-500">Wel</span>
+          <span className="text-black">come</span>
         </div>
       </Link>
 
       <div className="hidden h-full gap-12 lg:flex">
-        <Link href="/">
-          <p
-            className={`group relative p-2 rounded-md ${
-              activeLink === "/" ? "bg-green-100" : ""
-            }`}
-            onClick={() => handleLinkClick("/")}
-          >
-            <span className="absolute top-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute top-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-            <p className="text-black font-bold text-md hover:text-green-500">
-              Нүүр
-            </p>
-            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute bottom-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-          </p>
-        </Link>
-
-        <Link href="/service">
-          <p
-            className={`group relative p-2 rounded-md ${
-              activeLink === "/service" ? "bg-green-100" : ""
-            }`}
-            onClick={() => handleLinkClick("/service")}
-          >
-            <span className="absolute top-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute top-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-            <p className="text-black font-bold text-md hover:text-green-500">
-              Монголын гайхамшигууд
-            </p>
-            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute bottom-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-          </p>
-        </Link>
-
-        <Link href="/product">
-          <p
-            className={`group relative p-2 rounded-md ${
-              activeLink === "/product" ? "bg-green-100" : ""
-            }`}
-            onClick={() => handleLinkClick("/product")}
-          >
-            <span className="absolute top-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute top-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-            <p className="text-black font-bold text-md hover:text-green-500">
-              Аялалын брэндүүд
-            </p>
-            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute bottom-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-          </p>
-        </Link>
-
-        <Link href="/amralt">
-          <p
-            className={`group relative p-2 rounded-md ${
-              activeLink === "/amralt" ? "bg-green-100" : ""
-            }`}
-            onClick={() => handleLinkClick("/shop")}
-          >
-            <span className="absolute top-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute top-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-            <p className="text-black font-bold text-md hover:text-green-500">
-              Амралтын газрууд
-            </p>
-            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute bottom-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-          </p>
-        </Link>
-
-        <Link href="/contactUs">
-          <p
-            className={`group relative p-2 rounded-md ${
-              activeLink === "/contactUs" ? " bg-green-100" : ""
-            }`}
-            onClick={() => handleLinkClick("/contactUs")}
-          >
-            <span className="absolute top-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute top-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-
-            <p className="text-black font-bold text-md hover:text-green-500">
-              Аялаллын багаж хэрэгсэлүүд
-            </p>
-            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
-            <span className="absolute bottom-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
-          </p>
-        </Link>
+        {navLinks.map((link) => (
+          <Link href={link.href} key={link.href}>
+            <div
+              className={`group relative p-2 rounded-md ${
+                activeLink === link.href ? "bg-green-100" : ""
+              }`}
+              onClick={() => handleLinkClick(link.href)}
+            >
+              <span className="absolute top-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
+              <span className="absolute top-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
+              <span className="text-black font-bold text-md hover:text-green-500">
+                {link.label}
+              </span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:left-0"></span>
+              <span className="absolute bottom-0 right-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 ease-out group-hover:w-1/2 group-hover:right-0"></span>
+            </div>
+          </Link>
+        ))}
       </div>
     </nav>
   );

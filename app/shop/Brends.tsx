@@ -24,7 +24,7 @@ const Brends = () => {
               Elevate your journey with our <br /> top-rated timeless travel
               staples.
             </p>
-            <button className="px-8 py-2 bg-black text-white hover:bg-white border-2 border-black hover:text-black">
+            <button className="px-8 py-2 bg-black text-white hover:bg-white border-2 border-black hover:text-black ">
               SHOP NOW
             </button>
           </div>
