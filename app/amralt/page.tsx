@@ -171,7 +171,7 @@ const AmraltGazar = () => {
               </select>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Үнэлгээ</h3>
+              <h3 className="font-semibold mb-2">Үнэлгэээ</h3>
               <select
                 value={ratingFilter}
                 onChange={(e) => setRatingFilter(Number(e.target.value))}
