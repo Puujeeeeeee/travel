@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import Link from "next/link";
 const Product = () => {
   return (
     <div className="w-[100vw] h-full flex flex-col items-center justify-center ">
@@ -41,9 +42,11 @@ const Product = () => {
             Welcome сайтаар зочилж өөрийн аяллалын <br /> төгс хамтрагчаа
             олцгооё.
           </p>
-          <button className="px-8 py-2 bg-white mt-4 font-bold tracking-widest hover:bg-black hover:text-white trasnation-all">
-            SHOP NOW
-          </button>
+          <Link href={"/shop"}>
+            <button className="px-8 py-2 bg-white mt-4 font-bold tracking-widest hover:bg-black hover:text-white trasnation-all">
+              SHOP NOW
+            </button>
+          </Link>
         </div>
       </div>
     </div>

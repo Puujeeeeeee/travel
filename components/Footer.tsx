@@ -5,11 +5,14 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flexCenter  bg-gray-100 py-10">
+    <footer className="flexCenter  bg-white py-10">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
-            <Image src="hilink-logo.svg" alt="logo" width={74} height={29} />
+          <Link href="/">
+            <div className="flex text-2xl font-bold items-center justify-center hover:cursor-pointer">
+              <p className="text-green-500">Wel</p>
+              <p className="text-black">come</p>
+            </div>
           </Link>
 
           <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1">

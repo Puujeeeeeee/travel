@@ -14,7 +14,9 @@ const Hero = () => {
           height={50}
           className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
         />
-        <h1 className="bold-52 lg:bold-88">Travel to Mongolia</h1>
+        <h1 className="text-5xl lg:text-8xl font-bold font-times">
+          Travel to Mongolia
+        </h1>
         <p className="regular-16 mt-6 text-gray-30 xl:max-w-[520px]">
           We want to be on each of your journeys seeking the satisfaction of
           seeing the incorruptible beauty of nature. We can help you on an
