@@ -14,7 +14,8 @@ const Navbar = () => {
     { href: "/service", label: "Монголын гайхамшигууд" },
     { href: "/product", label: "Аялалын брэндүүд" },
     { href: "/amralt", label: "Амралтын газрууд" },
-    { href: "/travelTools", label: "Аялаллын багаж хэрэгсэлүүд" },
+
+    { href: "/contact", label: "Холбоо барих" },
   ];
 
   return (
