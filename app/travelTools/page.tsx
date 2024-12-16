@@ -1,12 +1,29 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaUmbrella, FaFirstAid, FaBatteryFull, FaAppleAlt, FaMap, FaSun, FaCamera, FaLock, FaWater, FaBook } from 'react-icons/fa';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaUmbrella,
+  FaFirstAid,
+  FaBatteryFull,
+  FaAppleAlt,
+  FaMap,
+  FaSun,
+  FaCamera,
+  FaLock,
+  FaWater,
+  FaBook,
+} from "react-icons/fa";
+
+interface Tool {
+  name: string;
+  description: string;
+  image: string;
+}
 
 const TravelTools = () => {
   const [currentTool, setCurrentTool] = useState(0);
-  const [selectedTool, setSelectedTool] = useState(null);
+  const [selectedTool, setSelectedTool] = useState<Tool | null>(null);
   const [isStoreOpen, setIsStoreOpen] = useState(false);
   const [featuredStore, setFeaturedStore] = useState(0);
 
@@ -175,7 +192,7 @@ const TravelTools = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 to-green-500 p-8">
-      <motion.h1 
+      <motion.h1
         className="text-5xl font-bold text-white text-center mb-12"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -183,16 +200,18 @@ const TravelTools = () => {
       >
         Аяллын Багаж Хэрэгсэл
       </motion.h1>
-      
-      <motion.div 
+
+      <motion.div
         className="bg-white rounded-lg shadow-xl p-6 mb-12 relative overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-semibold mb-4 text-green-600">Онцлох багаж</h2>
+        <h2 className="text-3xl font-semibold mb-4 text-green-600">
+          Онцлох багаж
+        </h2>
         <AnimatePresence mode="wait">
-          <motion.div 
+          <motion.div
             key={currentTool}
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -200,31 +219,45 @@ const TravelTools = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <Image src={tools[currentTool].image} alt={tools[currentTool].name} width={300} height={300} className="rounded-lg mr-6 shadow-lg" />
+            <Image
+              src={tools[currentTool].image}
+              alt={tools[currentTool].name}
+              width={300}
+              height={300}
+              className="rounded-lg mr-6 shadow-lg"
+            />
             <div>
-              <h3 className="text-2xl font-semibold text-blue-600">{tools[currentTool].name}</h3>
-              <p className="text-gray-600 mt-2">{tools[currentTool].description}</p>
+              <h3 className="text-2xl font-semibold text-blue-600">
+                {tools[currentTool].name}
+              </h3>
+              <p className="text-gray-600 mt-2">
+                {tools[currentTool].description}
+              </p>
             </div>
           </motion.div>
         </AnimatePresence>
         <div className="absolute bottom-2 right-2 flex space-x-2">
           {tools.map((_, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              className={`w-3 h-3 rounded-full ${index === currentTool ? 'bg-green-500' : 'bg-gray-300'}`}
+              className={`w-3 h-3 rounded-full ${
+                index === currentTool ? "bg-green-500" : "bg-gray-300"
+              }`}
               whileHover={{ scale: 1.2 }}
             />
           ))}
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="bg-white rounded-lg shadow-xl p-6 mb-12"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center text-green-600">Онцлох дэлгүүр</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center text-green-600">
+          Онцлох дэлгүүр
+        </h2>
         <AnimatePresence mode="wait">
           <motion.div
             key={featuredStore}
@@ -235,52 +268,81 @@ const TravelTools = () => {
             className="flex flex-col md:flex-row items-center justify-between"
           >
             <div className="md:w-1/3 text-center md:text-left mb-4 md:mb-0">
-              <Image src={stores[featuredStore].logo} alt={stores[featuredStore].name} width={150} height={150} className="mx-auto md:mx-0" />
-              <h3 className="text-2xl font-semibold mt-2 text-blue-600">{stores[featuredStore].name}</h3>
-              <p className="text-gray-600 mt-2">{stores[featuredStore].description}</p>
-              <a 
-                href={stores[featuredStore].website} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Image
+                src={stores[featuredStore].logo}
+                alt={stores[featuredStore].name}
+                width={150}
+                height={150}
+                className="mx-auto md:mx-0"
+              />
+              <h3 className="text-2xl font-semibold mt-2 text-blue-600">
+                {stores[featuredStore].name}
+              </h3>
+              <p className="text-gray-600 mt-2">
+                {stores[featuredStore].description}
+              </p>
+              <a
+                href={stores[featuredStore].website}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors"
               >
                 Дэлгүүрт зочлох
               </a>
             </div>
             <div className="md:w-1/3 text-center">
-              <h4 className="text-xl font-semibold mb-2">Онцлох бүтээгдэхүүн</h4>
-              <Image 
-                src={stores[featuredStore].featuredProduct.image} 
-                alt={stores[featuredStore].featuredProduct.name} 
-                width={200} 
-                height={200} 
+              <h4 className="text-xl font-semibold mb-2">
+                Онцлох бүтээгдэхүүн
+              </h4>
+              <Image
+                src={stores[featuredStore].featuredProduct.image}
+                alt={stores[featuredStore].featuredProduct.name}
+                width={200}
+                height={200}
                 className="mx-auto rounded-lg shadow-md"
               />
-              <p className="mt-2 font-semibold">{stores[featuredStore].featuredProduct.name}</p>
-              <p className="text-green-600 font-bold">{stores[featuredStore].featuredProduct.price}</p>
+              <p className="mt-2 font-semibold">
+                {stores[featuredStore].featuredProduct.name}
+              </p>
+              <p className="text-green-600 font-bold">
+                {stores[featuredStore].featuredProduct.price}
+              </p>
             </div>
             <div className="md:w-1/3 mt-4 md:mt-0">
-              <h4 className="text-xl font-semibold mb-2 text-center">Хямдралтай бүтээгдэхүүнүүд</h4>
+              <h4 className="text-xl font-semibold mb-2 text-center">
+                Хямдралтай бүтээгдэхүүнүүд
+              </h4>
               <ul className="bg-gray-100 rounded-lg p-4">
-                <li className="mb-2">Аяллын гэрэл - <span className="line-through">50,000₮</span> <span className="text-red-500 font-bold">35,000₮</span></li>
-                <li className="mb-2">Уулын гутал - <span className="line-through">250,000₮</span> <span className="text-red-500 font-bold">199,000₮</span></li>
-                <li>Майхан - <span className="line-through">400,000₮</span> <span className="text-red-500 font-bold">320,000₮</span></li>
+                <li className="mb-2">
+                  Аяллын гэрэл - <span className="line-through">50,000₮</span>{" "}
+                  <span className="text-red-500 font-bold">35,000₮</span>
+                </li>
+                <li className="mb-2">
+                  Уулын гутал - <span className="line-through">250,000₮</span>{" "}
+                  <span className="text-red-500 font-bold">199,000₮</span>
+                </li>
+                <li>
+                  Майхан - <span className="line-through">400,000₮</span>{" "}
+                  <span className="text-red-500 font-bold">320,000₮</span>
+                </li>
               </ul>
             </div>
           </motion.div>
         </AnimatePresence>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="bg-white rounded-lg shadow-xl p-6 mb-12"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center text-green-600">Бүх багаж хэрэгсэл</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center text-green-600">
+          Бүх багаж хэрэгсэл
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tools.map((tool, index) => (
-            <motion.div 
+          {tools.map((tool: any, index: number) => (
+            <motion.div
               key={tool.name}
               className="bg-gray-100 rounded-lg p-4 cursor-pointer"
               whileHover={{ scale: 1.05, backgroundColor: "#e0f2fe" }}
@@ -288,8 +350,16 @@ const TravelTools = () => {
               transition={{ duration: 0.2 }}
               onClick={() => setSelectedTool(tool)}
             >
-              <Image src={tool.image} alt={tool.name} width={100} height={100} className="rounded-lg mb-2 mx-auto" />
-              <h3 className="font-semibold text-center text-blue-600">{tool.name}</h3>
+              <Image
+                src={tool.image}
+                alt={tool.name}
+                width={100}
+                height={100}
+                className="rounded-lg mb-2 mx-auto"
+              />
+              <h3 className="font-semibold text-center text-blue-600">
+                {tool.name}
+              </h3>
             </motion.div>
           ))}
         </div>
@@ -304,16 +374,18 @@ const TravelTools = () => {
         Бүх дэлгүүрийг харах
       </motion.button>
 
-      <motion.div 
+      <motion.div
         className="bg-white rounded-lg shadow-xl p-6"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center text-green-600">Аяллын зөвлөгөө</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center text-green-600">
+          Аяллын зөвлөгөө
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {tips.map((tip, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className="bg-gray-100 rounded-lg p-4 flex items-start space-x-4"
               whileHover={{ scale: 1.05, backgroundColor: "#e0f2fe" }}
@@ -330,22 +402,30 @@ const TravelTools = () => {
 
       <AnimatePresence>
         {selectedTool && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div 
+            <motion.div
               className="bg-white rounded-lg p-6 max-w-md"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
             >
-              <h3 className="text-2xl font-semibold mb-2 text-blue-600">{selectedTool.name}</h3>
-              <Image src={selectedTool.image} alt={selectedTool.name} width={200} height={200} className="rounded-lg mb-4 mx-auto" />
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600">
+                {selectedTool.name}
+              </h3>
+              <Image
+                src={selectedTool.image}
+                alt={selectedTool.name}
+                width={200}
+                height={200}
+                className="rounded-lg mb-4 mx-auto"
+              />
               <p className="text-gray-600">{selectedTool.description}</p>
-              <button 
+              <button
                 className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md"
                 onClick={() => setSelectedTool(null)}
               >
@@ -358,33 +438,43 @@ const TravelTools = () => {
 
       <AnimatePresence>
         {isStoreOpen && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div 
+            <motion.div
               className="bg-white rounded-lg p-6 max-w-4xl w-full"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
             >
-              <h3 className="text-3xl font-semibold mb-6 text-center text-green-600">Бүх дэлгүүр</h3>
+              <h3 className="text-3xl font-semibold mb-6 text-center text-green-600">
+                Бүх дэлгүүр
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {stores.map((store, index) => (
-                  <motion.div 
+                  <motion.div
                     key={store.name}
                     className="bg-gray-100 rounded-lg p-4 text-center"
                     whileHover={{ scale: 1.05, backgroundColor: "#e0f2fe" }}
                   >
-                    <Image src={store.logo} alt={store.name} width={150} height={150} className="mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2 text-blue-600">{store.name}</h3>
+                    <Image
+                      src={store.logo}
+                      alt={store.name}
+                      width={150}
+                      height={150}
+                      className="mx-auto mb-4"
+                    />
+                    <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                      {store.name}
+                    </h3>
                     <p className="text-gray-600 mb-4">{store.description}</p>
-                    <a 
-                      href={store.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={store.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-colors"
                     >
                       Дэлгүүрт зочлох
@@ -392,7 +482,7 @@ const TravelTools = () => {
                   </motion.div>
                 ))}
               </div>
-              <button 
+              <button
                 className="mt-8 bg-red-500 text-white px-6 py-3 rounded-full font-bold mx-auto block"
                 onClick={() => setIsStoreOpen(false)}
               >

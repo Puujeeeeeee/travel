@@ -1,18 +1,18 @@
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-700 via-yellow-600 to-blue-800 p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black p-4 sm:p-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
-          <h1 className="text-5xl font-bold text-yellow-100 mb-4 animate-fade-in">
+          <h1 className="text-5xl font-bold text-white mb-4 animate-fade-in">
             Холбоо барих
           </h1>
-          <p className="text-xl text-yellow-100/90 max-w-2xl mx-auto animate-slide-up">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-slide-up">
             Та бидэнтэй холбоо барихыг хүсвэл доорх мэдээллийг ашиглана уу
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="backdrop-blur-lg bg-blue-900/30 rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-500 border border-yellow-500/20">
+          <div className="backdrop-blur-lg bg-gray-900/30 rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-500 border border-gray-500/20">
             <div className="space-y-12">
               <div className="flex items-center space-x-6 group">
                 <div className="flex-shrink-0">
@@ -65,28 +65,28 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="backdrop-blur-lg bg-blue-900/30 rounded-3xl shadow-2xl p-8 border border-yellow-500/20">
+          <div className="backdrop-blur-lg bg-gray-900/30 rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-500 border border-gray-500/20">
             <form className="space-y-8">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <div className="relative group">
                   <input
                     type="text"
                     id="name"
-                    className="w-full bg-white/5 border-2 border-yellow-500/30 rounded-xl px-6 py-4 text-yellow-100 placeholder-yellow-100/50 focus:border-yellow-500/50 focus:outline-none backdrop-blur-sm transition-all"
+                    className="w-full bg-white/5 border-2 border-gray-500/30 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-gray-400 focus:outline-none backdrop-blur-sm transition-all"
                     placeholder="Таны нэр"
                     required
                   />
-                  <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
+                  <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-gray-500 to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
                 </div>
                 <div className="relative group">
                   <input
                     type="email"
                     id="email"
-                    className="w-full bg-white/5 border-2 border-white/10 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-white/30 focus:outline-none backdrop-blur-sm transition-all"
+                    className="w-full bg-white/5 border-2 border-gray-500/30 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-gray-400 focus:outline-none backdrop-blur-sm transition-all"
                     placeholder="Таны имэйл"
                     required
                   />
-                  <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
+                  <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-gray-500 to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
                 </div>
               </div>
 
@@ -94,27 +94,27 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
-                  className="w-full bg-white/5 border-2 border-white/10 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-white/30 focus:outline-none backdrop-blur-sm transition-all"
+                  className="w-full bg-white/5 border-2 border-gray-500/30 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-gray-400 focus:outline-none backdrop-blur-sm transition-all"
                   placeholder="Гарчиг"
                   required
                 />
-                <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
+                <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-gray-500 to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
               </div>
 
               <div className="relative group">
                 <textarea
                   id="message"
                   rows={6}
-                  className="w-full bg-white/5 border-2 border-white/10 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-white/30 focus:outline-none backdrop-blur-sm transition-all resize-none"
+                  className="w-full bg-white/5 border-2 border-gray-500/30 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:border-gray-400 focus:outline-none backdrop-blur-sm transition-all resize-none"
                   placeholder="Таны мессэж"
                   required
                 ></textarea>
-                <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
+                <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-gray-500 to-transparent w-0 group-hover:w-full transition-all duration-500"></div>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-red-700 via-yellow-600 to-blue-800 text-yellow-100 py-4 px-8 rounded-xl font-semibold text-lg hover:opacity-90 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:ring-offset-2 focus:ring-offset-transparent border border-yellow-500/30"
+                className="w-full bg-gradient-to-r from-gray-800 to-black text-white py-4 px-8 rounded-xl font-semibold text-lg hover:opacity-90 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:ring-offset-2 focus:ring-offset-transparent border border-gray-500/30"
               >
                 Илгээх
               </button>

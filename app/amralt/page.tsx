@@ -21,7 +21,8 @@ const AmraltGazar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [priceFilter, setPriceFilter] = useState("all");
   const [ratingFilter, setRatingFilter] = useState(0);
-  const [selectedAccommodation, setSelectedAccommodation] = useState<Accommodation | null>(null);
+  const [selectedAccommodation, setSelectedAccommodation] =
+    useState<Accommodation | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("hotels");
 
@@ -79,7 +80,7 @@ const AmraltGazar = () => {
     {
       name: "Ramada Ulaanbaatar Citycenter",
       location: "Сүхбаатар дүүрэг, Улаанбаатар",
-      description: "Хотын төвд байрлах олон улсын стандартын зочид буудал",
+      description: "Хотын төвд байрлах олон улсын стандартын зочид буудал шүү",
       rating: 4,
       price: 280000,
       image: "/ramada-ulaanbaatar.jpg",
@@ -193,7 +194,7 @@ const AmraltGazar = () => {
               </select>
             </div>
             <div>
-              <h3 className="font-semibold mb-2" htmlFor="ratingFilter">Үнэлгэээ</h3>
+              <h3 className="font-semibold mb-2">Үнэлгэээ</h3>
               <select
                 id="ratingFilter"
                 value={ratingFilter}
@@ -210,7 +211,7 @@ const AmraltGazar = () => {
           <div className="w-3/4">
             <h2 className="text-2xl font-bold mb-6 text-[#2c1810] border-b-2 border-[#d4af37] pb-2">
               {activeTab === "hotels"
-                ? "Монголын Шилдэг Б��удлууд"
+                ? "Монголын Шилдэг Буудлууд"
                 : "Монголын Шилдэг Амралтын Газрууд"}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
